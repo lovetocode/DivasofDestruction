@@ -1,0 +1,87 @@
+[gd_scene load_steps=17 format=3 uid="uid://dd2sgr4h8i2n4"]
+
+[ext_resource type="Texture2D" uid="uid://hx5q4lixq1dx" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle1.png" id="1_71ywl"]
+[ext_resource type="Texture2D" uid="uid://1cyaggy0o8ua" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle2.png" id="2_bae85"]
+[ext_resource type="Texture2D" uid="uid://bd2xmq7uo7nge" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle3.png" id="3_dmslh"]
+[ext_resource type="Texture2D" uid="uid://basfe88eot534" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle4.png" id="4_vwfla"]
+[ext_resource type="Texture2D" uid="uid://by0af5erxvwi4" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk1.png" id="5_6ds8j"]
+[ext_resource type="Texture2D" uid="uid://b3fl0l6a0mvsq" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk2.png" id="6_8cj3n"]
+[ext_resource type="Texture2D" uid="uid://cnqmu38h3msi1" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk3.png" id="7_pbbfj"]
+[ext_resource type="Texture2D" uid="uid://cjm4jccekye4" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk4.png" id="8_mv25s"]
+[ext_resource type="Texture2D" uid="uid://dvpueikqxrqgg" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk5.png" id="9_sf8ht"]
+[ext_resource type="Texture2D" uid="uid://clqrdb8tfji80" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk6.png" id="10_87wem"]
+[ext_resource type="Texture2D" uid="uid://hd6etn3043tr" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk7.png" id="11_ry5am"]
+[ext_resource type="Texture2D" uid="uid://q2yhjga02g4d" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk8.png" id="12_6fkx8"]
+[ext_resource type="Texture2D" uid="uid://cmsbbtesuagq1" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk9.png" id="13_rlxe6"]
+[ext_resource type="Texture2D" uid="uid://bxce5hjg0s8f0" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk10.png" id="14_snoec"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k56w4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_71ywl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bae85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dmslh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vwfla")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6ds8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8cj3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pbbfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mv25s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sf8ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_87wem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ry5am")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6fkx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rlxe6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_snoec")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esh34"]
+size = Vector2(16, 47)
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(337, -27)
+sprite_frames = SubResource("SpriteFrames_k56w4")
+animation = &"Walk"
+frame = 2
+frame_progress = 0.436087
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+position = Vector2(335, -18.5)
+shape = SubResource("RectangleShape2D_esh34")
