@@ -76,12 +76,12 @@ size = Vector2(16, 47)
 [node name="Player" type="CharacterBody2D"]
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(337, -27)
+position = Vector2(-2, -13.5)
 sprite_frames = SubResource("SpriteFrames_k56w4")
 animation = &"Walk"
 frame = 2
 frame_progress = 0.436087
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
-position = Vector2(335, -18.5)
+position = Vector2(-4, -5)
 shape = SubResource("RectangleShape2D_esh34")
