@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://dd2sgr4h8i2n4"]
+[gd_scene load_steps=18 format=3 uid="uid://dd2sgr4h8i2n4"]
 
 [ext_resource type="Texture2D" uid="uid://hx5q4lixq1dx" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle1.png" id="1_71ywl"]
+[ext_resource type="Script" path="res://Players/Scripts/player.gd" id="1_g2d2q"]
 [ext_resource type="Texture2D" uid="uid://1cyaggy0o8ua" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle2.png" id="2_bae85"]
 [ext_resource type="Texture2D" uid="uid://bd2xmq7uo7nge" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle3.png" id="3_dmslh"]
 [ext_resource type="Texture2D" uid="uid://basfe88eot534" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle4.png" id="4_vwfla"]
@@ -74,6 +75,7 @@ animations = [{
 size = Vector2(16, 47)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2d2q")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2, -13.5)
