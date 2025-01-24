@@ -1,5 +1,5 @@
 class_name  State_machine
-extends State
+extends Node2D
 
 
 var current_state: State
@@ -13,7 +13,7 @@ func process_frame(delta: float) -> void:
 	if new_state: change_state(new_state)
 
 func proces_input(event: InputEvent) -> void:
-	var new_state: State = current_state.process_frame(event)
+	var new_state: State = current_state.process_input(event)
 	if new_state: change_state(new_state)
 	
 func process_physics(delta: float) -> void:
@@ -21,6 +21,6 @@ func process_physics(delta: float) -> void:
 	if new_state: change_state(new_state)
 	
 func change_state(new_state: State) -> void:
-	current_state.exit()
+	if current_state: current_state.exit()
 	current_state = new_state
 	current_state.enter()

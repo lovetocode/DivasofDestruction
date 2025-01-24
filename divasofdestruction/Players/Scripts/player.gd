@@ -1,25 +1,16 @@
+class_name Player
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@onready var state_machine: State_machine = $"State Machine"
+@onready var animation: AnimationPlayer = $Animation
 
+fuinc ready(): state_machine.init()
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+func _init(): state_machine.init()
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+func _process(delta): State_machine.process_frame(delta)
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+func _physics_process(delta: float): state_machine.process_physics(delta)
 
-	move_and_slide()
+func _input(event: InputEvent): state_machine.proces_input(event)
