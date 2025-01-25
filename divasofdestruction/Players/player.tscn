@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dd2sgr4h8i2n4"]
+[gd_scene load_steps=19 format=3 uid="uid://dd2sgr4h8i2n4"]
 
 [ext_resource type="Texture2D" uid="uid://hx5q4lixq1dx" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle1.png" id="1_71ywl"]
 [ext_resource type="Script" path="res://Players/Scripts/player.gd" id="1_g2d2q"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://q2yhjga02g4d" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk8.png" id="12_6fkx8"]
 [ext_resource type="Texture2D" uid="uid://cmsbbtesuagq1" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk9.png" id="13_rlxe6"]
 [ext_resource type="Texture2D" uid="uid://bxce5hjg0s8f0" path="res://Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk10.png" id="14_snoec"]
+[ext_resource type="PackedScene" uid="uid://dk1mv2wivv3mi" path="res://Players/state_machine.tscn" id="16_coo3q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k56w4"]
 animations = [{
@@ -87,3 +88,5 @@ frame_progress = 0.436087
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-4, -5)
 shape = SubResource("RectangleShape2D_esh34")
+
+[node name="StateMachine" parent="." instance=ExtResource("16_coo3q")]

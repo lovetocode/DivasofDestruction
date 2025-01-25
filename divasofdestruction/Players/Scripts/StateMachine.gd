@@ -1,5 +1,5 @@
 class_name  State_machine
-extends Node2D
+extends Node
 
 
 var current_state: State

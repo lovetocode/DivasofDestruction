@@ -3,13 +3,11 @@ extends CharacterBody2D
 
 
 @onready var state_machine: State_machine = $"State Machine"
-@onready var animation: AnimationPlayer = $Animation
+@onready var animation: AnimationPlayer = $animation
 
-fuinc ready(): state_machine.init()
+func ready(): state_machine.init()
 
-func _init(): state_machine.init()
-
-func _process(delta): State_machine.process_frame(delta)
+func _process(delta): state_machine.process_frame(delta)
 
 func _physics_process(delta: float): state_machine.process_physics(delta)
 
